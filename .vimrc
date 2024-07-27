@@ -1,0 +1,9 @@
+set number
+set cursorcolumn
+set showcmd
+set wrap
+set laststatus=2
+set showmode
+set list
+set lcs=tab:\|\ 
+set history=500
