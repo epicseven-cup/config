@@ -1,0 +1,34 @@
+{
+	"logo": {
+		"source": "$HOME/.config/fastfetch/anime_wow.txt",
+		"type": "file",
+		"color": {
+			"1": "white",
+			"2": "red",
+			"3": "38;2;23;147;209"
+		}
+	},
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"modules": [
+		"title",
+		"separator",
+		"os",
+		"host",
+		"kernel",
+		"uptime",
+		"packages",
+		"shell",
+		"font",
+		"cursor",
+		"terminal",
+		"terminalfont",
+		"cpu",
+		"gpu",
+		"memory",
+		"swap",
+		"disk",
+		"battery",
+		"break",
+		"colors"
+	]
+}
