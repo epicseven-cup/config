@@ -34,17 +34,25 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Gaps
+gaps inner 10px
+
+#Client
+client.focused #ff5c4d #ff9636 #FFFFFF #dad870 #285577
+
+# Rounded Corners
+# TODO: This seems to be need a composer (picom) and update it later. I remember doing it before idk how anymore
 
 # Wallpaper
-exec --no-startup-id feh --bg-fill /home/tomato/Pictures/bg.png
+#exec --no-startup-id feh --bg-fill $HOME/Pictures/bg.jpg
 
 # RedShift / Light adjustment
 #exec --no-startup-id redshift -O 3000
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id [[ $(pactl get-sink-volume @DEFAULT_SINK@| grep -o '[0-9]*%'| head -1 | tr -d "%") < 80 ]] && pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status || pactl set-sink-volume @DEFAULT_SINK@ 80% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id [[ $(pactl get-sink-volume @DEFAULT_SINK@| grep -o '[0-9]*%'| head -1 | tr -d "%") > 0 ]] && pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status || pactl set-sink-volume @DEFAULT_SINK@ 0% && refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id [[ $(pactl get-sink-volume @DEFAULT_SINK@| grep -o '[0-9]*%'| head -1 | tr -d "%") < 80 ]] && pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status || pactl set-sink-volume @DEFAULT_SINK@ 80% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id [[ $(pactl get-sink-volume @DEFAULT_SINK@| grep -o '[0-9]*%'| head -1 | tr -d "%") > 0 ]] && pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status || pactl set-sink-volume @DEFAULT_SINK@ 0% && refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
